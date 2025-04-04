@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Todolist</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Config for Cyberpunk Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-yellow': '#f9f002',
+                        'cyber-pink': '#ff2a6d',
+                        'cyber-blue': '#05d9e8',
+                        'cyber-dark': '#1a1a2e',
+                        'cyber-purple': '#bd00ff',
+                    },
+                    fontFamily: {
+                        'cyber': ['Orbitron', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'cyber': '0 0 10px #05d9e8, 0 0 20px #05d9e8',
+                        'cyber-pink': '0 0 10px #ff2a6d, 0 0 20px #ff2a6d',
+                        'cyber-yellow': '0 0 10px #f9f002, 0 0 20px #f9f002',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font for Cyberpunk theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body class="bg-cyber-dark text-white min-h-screen font-cyber">
+    <div class="container mx-auto p-4 max-w-3xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-cyber-yellow glitch-text">
+                <span class="text-cyber-pink">CYBER</span>TODO
+            </h1>
+            <p class="text-cyber-blue text-lg">organize_your_future.exe</p>
+        </header>
+
+        <div class="mb-8 p-6 bg-black/60 border border-cyber-blue rounded-lg shadow-cyber">
+            <form id="todo-form" class="flex flex-col md:flex-row gap-4">
+                <input 
+                    type="text" 
+                    id="todo-input" 
+                    placeholder="NEW TASK://" 
+                    class="p-3 border-b-2 border-cyber-pink bg-transparent flex-grow text-white focus:outline-none focus:border-cyber-yellow transition-colors"
+                    required
+                >
+                <button 
+                    type="submit" 
+                    class="px-6 py-3 bg-cyber-pink text-white font-bold rounded hover:bg-cyber-purple transition-colors hover:shadow-cyber-pink"
+                >
+                    ADD_TASK
+                </button>
+            </form>
+        </div>
+
+        <div class="mb-4 flex justify-between items-center">
+            <h2 class="text-2xl text-cyber-blue font-bold">ACTIVE_TASKS</h2>
+            <div class="flex gap-2">
+                <button id="toggle-filter" class="text-cyber-yellow hover:text-cyber-pink transition-colors">
+                    [FILTER]
+                </button>
+                <button id="clear-completed" class="text-cyber-yellow hover:text-cyber-pink transition-colors">
+                    [CLEAR_COMPLETED]
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-black/80 rounded-lg overflow-hidden border border-cyber-pink">
+            <ul id="todo-list" class="divide-y divide-cyber-blue/30">
+                <!-- Todo items will be added here dynamically -->
+            </ul>
+        </div>
+
+        <footer class="mt-8 text-center text-cyber-blue/70 text-sm">
+            <p>CYBERTODO v1.0.0 | STATUS: <span class="text-cyber-yellow">ONLINE</span></p>
+        </footer>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="edit-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <!-- Modal Backdrop -->
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative z-10 mx-4 w-full max-w-md bg-cyber-dark/90 border-2 border-cyber-blue p-6 rounded-lg shadow-cyber transform transition-all">
+            <div class="absolute -top-3 -left-3 w-6 h-6 bg-cyber-dark border border-cyber-blue"></div>
+            <div class="absolute -top-3 -right-3 w-6 h-6 bg-cyber-dark border border-cyber-blue"></div>
+            <div class="absolute -bottom-3 -left-3 w-6 h-6 bg-cyber-dark border border-cyber-blue"></div>
+            <div class="absolute -bottom-3 -right-3 w-6 h-6 bg-cyber-dark border border-cyber-blue"></div>
+            
+            <h3 class="text-xl font-bold text-cyber-yellow mb-4">EDIT_TASK.exe</h3>
+            
+            <form id="edit-form" class="space-y-4">
+                <div class="relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-cyber-blue via-cyber-pink to-cyber-purple blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                    <input 
+                        type="text" 
+                        id="edit-input" 
+                        class="p-3 border-b-2 border-cyber-pink bg-black/50 w-full text-white focus:outline-none focus:border-cyber-yellow transition-colors"
+                        required
+                    >
+                </div>
+                
+                <div class="flex gap-3 justify-end">
+                    <button 
+                        type="button"
+                        id="cancel-edit" 
+                        class="px-4 py-2 border border-cyber-blue text-cyber-blue hover:text-cyber-yellow hover:border-cyber-yellow transition-colors"
+                    >
+                        [CANCEL]
+                    </button>
+                    <button 
+                        type="submit" 
+                        class="px-4 py-2 bg-cyber-pink text-white hover:bg-cyber-purple transition-colors hover:shadow-cyber-pink"
+                    >
+                        [UPDATE]
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="src/js/app.js"></script>
+</body>
+</html> 
