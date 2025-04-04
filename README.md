@@ -1,6 +1,6 @@
-# 🌟 Cyberpunk Todolist
-
 <div align="center">
+
+<h1 align="center">🌟 Cyberpunk Todolist</h1>
 
 ![GitHub License](https://img.shields.io/github/license/yourusername/cyberpunk-todolist)
 ![GitHub Stars](https://img.shields.io/github/stars/yourusername/cyberpunk-todolist?style=social)

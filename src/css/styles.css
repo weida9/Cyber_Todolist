@@ -322,4 +322,34 @@ body::after {
   50% {
     box-shadow: 0 0 10px #05d9e8, 0 0 15px #05d9e8;
   }
+}
+
+/* Full height and centered app layout */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* Make app take full height on mobile */
+@media (max-height: 700px) {
+  body {
+    justify-content: flex-start;
+  }
 } 
