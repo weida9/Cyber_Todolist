@@ -259,6 +259,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Google Fonts](https://fonts.google.com/) for the Orbitron font
 - All [contributors](https://github.com/yourusername/cyberpunk-todolist/contributors) and supporters
 
+## 🤖 AI-Generated Project
+
+This project was 99% created by prompting in the Cursor AI with Claude 3.7 Sonnet Extended Thinking. Approximately 95% of the code, documentation, and design decisions were made by artificial intelligence, with minimal human intervention.
+
+The AI model generated the:
+- HTML structure and UI design
+- CSS styling and animations
+- JavaScript functionality
+- Project documentation
+- File structure and organization
+
+Human contributions were limited to providing initial prompts, reviewing the output, and making minor adjustments.
+
 ---
 
 <div align="center">
