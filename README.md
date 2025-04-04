@@ -244,7 +244,7 @@ For more details, please read our [Contributing Guidelines](CONTRIBUTING.md).
 
 ## 👨‍💻 Authors
 
-- **Your Name** - *Initial work* - [@yourhandle](https://github.com/yourhandle)
+- **Weida** - *Initial work* - [@weida9](https://github.com/weida9)
 
 See also the list of [contributors](https://github.com/yourusername/cyberpunk-todolist/contributors) who participated in this project.
 
